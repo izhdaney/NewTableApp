@@ -13,13 +13,13 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var txtLastName: UITextField!
     @IBOutlet weak var txtImageName: UITextField!
     @IBOutlet weak var lblError: UILabel!
-    
+   
+    weak var newItemDelegate :NewItemDelegate?
     
     @IBAction func btnAddTouchUpInside(_ sender: UIButton) {
         if (validation()){
             lblError.isHidden = true
-            let dictionary = ["name": txtName.text!, "lastName": txtLastName.text!, "image": txtImageName.text!]
-            NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationFromAddItemVC"), object: nil, userInfo: dictionary)
+            newItemDelegate?.update(name: txtName.text, lastName: txtLastName.text, imageName: txtImageName.text)
             dismiss(animated: true)
         }
         else{

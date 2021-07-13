@@ -21,33 +21,31 @@ class NewTableViewController: UIViewController {
         tblMyTable.dataSource = self
         tblMyTable.register(UINib(nibName: "MyTableViewCell", bundle: nil), forCellReuseIdentifier: cellID)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:  .add, target: self , action: #selector(editTapped))
-        NotificationCenter.default.addObserver(self, selector: #selector(addItem), name: Notification.Name(rawValue: "NotificationFromAddItemVC"), object: nil)
     }
 
     
     @objc func editTapped(){
         let vc = AddItemViewController()
         self.present(vc, animated: true, completion: nil)
-    }
-    
-    @objc func addItem(notifiction: Notification){
-        
-        guard let userInfo = notifiction.userInfo else {return}
-        
-        guard let name = userInfo["name"] as? String else {return}
-        guard let lastName = userInfo["lastName"] as? String else {return}
-        guard let imageName = userInfo["image"] as? String else {return}
-        
-        let newItem: Contacts = Contacts(name: name, lastName: lastName, imageName: imageName)
-        self.data.insert(newItem, at: 0)
-        tblMyTable.reloadData()
+        vc.newItemDelegate = self
     }
     
 
 }
 
 
-extension NewTableViewController:UITableViewDelegate,UITableViewDataSource{
+extension NewTableViewController:UITableViewDelegate,UITableViewDataSource, NewItemDelegate{
+    func update(name: String?, lastName: String?, imageName: String?) {
+        
+        let name = name!
+        let lastName = lastName!
+        let imageName = imageName!
+        
+        let newItem: Contacts = Contacts(name: name, lastName: lastName, imageName: imageName)
+        data.insert(newItem, at: 0)
+        tblMyTable.reloadData()
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.data.count

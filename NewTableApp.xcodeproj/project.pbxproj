@@ -20,6 +20,7 @@
 		BB5C8FA9269CCCB500AE0E34 /* AddItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5C8FA7269CCCB500AE0E34 /* AddItemViewController.xib */; };
 		BBA673E5269D97A20070FE86 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA673E4269D97A20070FE86 /* Contact.swift */; };
 		BBA673E9269DC8320070FE86 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BBA673E8269DC8320070FE86 /* Podfile */; };
+		BBA673EE269E18FC0070FE86 /* NewItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA673ED269E18FC0070FE86 /* NewItemDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BB5C8FA7269CCCB500AE0E34 /* AddItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemViewController.xib; sourceTree = "<group>"; };
 		BBA673E4269D97A20070FE86 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		BBA673E8269DC8320070FE86 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		BBA673ED269E18FC0070FE86 /* NewItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		BB56DD60269B744E00DBF95A /* NewTableApp */ = {
 			isa = PBXGroup;
 			children = (
+				BBA673EC269E18D70070FE86 /* protocols */,
 				BBA673E3269D97680070FE86 /* models */,
 				BB56DD61269B744E00DBF95A /* AppDelegate.swift */,
 				BB56DD63269B744E00DBF95A /* SceneDelegate.swift */,
@@ -94,6 +97,14 @@
 				BBA673E4269D97A20070FE86 /* Contact.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		BBA673EC269E18D70070FE86 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BBA673ED269E18FC0070FE86 /* NewItemDelegate.swift */,
+			);
+			path = protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +184,7 @@
 				BB56DD62269B744E00DBF95A /* AppDelegate.swift in Sources */,
 				BB56DD64269B744E00DBF95A /* SceneDelegate.swift in Sources */,
 				BB56DD87269C460300DBF95A /* MyTableViewCell.swift in Sources */,
+				BBA673EE269E18FC0070FE86 /* NewItemDelegate.swift in Sources */,
 				BB56DD8B269C8BE600DBF95A /* PersonalViewController.swift in Sources */,
 				BB5C8FA8269CCCB500AE0E34 /* AddItemViewController.swift in Sources */,
 				BBA673E5269D97A20070FE86 /* Contact.swift in Sources */,
