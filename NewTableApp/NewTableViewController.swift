@@ -14,6 +14,8 @@ class NewTableViewController: UIViewController {
     
     private var data: [Contacts] = [Contacts(name: "Ilya", lastName: "Zhdaney", imageName: "image4"), Contacts(name: "Dmitriy", lastName: "Dmitriev", imageName: "image4"), Contacts(name: "Dmitriy", lastName: "Dmitriev", imageName: "image4")]
     
+    var drinks = [CocktailResults]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +23,18 @@ class NewTableViewController: UIViewController {
         tblMyTable.dataSource = self
         tblMyTable.register(UINib(nibName: "MyTableViewCell", bundle: nil), forCellReuseIdentifier: cellID)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:  .add, target: self , action: #selector(editTapped))
+        
+        let service = Service(baseUrl: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=rum")
+        service.getAllDrinksList()
+        
+        service.completionHandler { [weak self] (drinks, status, message) in
+                    if status {
+                        guard let self = self else {return}
+                        guard let _drinks = drinks as? [CocktailResults] else {return}
+                        self.drinks = _drinks
+                        self.tblMyTable.reloadData()
+                    }
+                }
     }
 
     
@@ -48,7 +62,7 @@ extension NewTableViewController:UITableViewDelegate,UITableViewDataSource, NewI
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.data.count
+        return self.drinks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,9 +70,9 @@ extension NewTableViewController:UITableViewDelegate,UITableViewDataSource, NewI
         let cell = tblMyTable.dequeueReusableCell(withIdentifier: cellID) as! MyTableViewCell
         
         
-        cell.tblName.text = data[indexPath.row].name
-        cell.tblImage.image = UIImage(named: data[indexPath.row].imageName!)
-        cell.tblLastName.text = data[indexPath.row].lastName
+        cell.tblName.text = drinks[indexPath.row].drinkName
+        cell.tblImage.image = UIImage(named: "image4")
+        cell.tblLastName.text = drinks[indexPath.row].idCoctail
 
         return cell
     }

@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		881F5028B3A35146EAE25DF2 /* Pods_NewTableApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7ADC185CF20F3F4D41E9AF /* Pods_NewTableApp.framework */; };
+		BB465C3D26A186B0005D214C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB465C3C26A186B0005D214C /* Service.swift */; };
+		BB465C3F26A18C99005D214C /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB465C3E26A18C99005D214C /* Drinks.swift */; };
 		BB56DD62269B744E00DBF95A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB56DD61269B744E00DBF95A /* AppDelegate.swift */; };
 		BB56DD64269B744E00DBF95A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB56DD63269B744E00DBF95A /* SceneDelegate.swift */; };
 		BB56DD6B269B744F00DBF95A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB56DD6A269B744F00DBF95A /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		AA7ADC185CF20F3F4D41E9AF /* Pods_NewTableApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewTableApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB465C3C26A186B0005D214C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		BB465C3E26A18C99005D214C /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
 		BB56DD5E269B744E00DBF95A /* NewTableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewTableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB56DD61269B744E00DBF95A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB56DD63269B744E00DBF95A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +68,6 @@
 				F24529EFD977A4035BA44A90 /* Pods-NewTableApp.debug.xcconfig */,
 				D41D23759E3D03A2EB72C898 /* Pods-NewTableApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -104,6 +107,7 @@
 				BB56DD86269C460300DBF95A /* MyTableViewCell.xib */,
 				BB5C8FA6269CCCB500AE0E34 /* AddItemViewController.swift */,
 				BB5C8FA7269CCCB500AE0E34 /* AddItemViewController.xib */,
+				BB465C3C26A186B0005D214C /* Service.swift */,
 			);
 			path = NewTableApp;
 			sourceTree = "<group>";
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				BBA673E4269D97A20070FE86 /* Contact.swift */,
+				BB465C3E26A18C99005D214C /* Drinks.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -254,6 +259,8 @@
 				BB56DD64269B744E00DBF95A /* SceneDelegate.swift in Sources */,
 				BB56DD87269C460300DBF95A /* MyTableViewCell.swift in Sources */,
 				BBA673EE269E18FC0070FE86 /* NewItemDelegate.swift in Sources */,
+				BB465C3D26A186B0005D214C /* Service.swift in Sources */,
+				BB465C3F26A18C99005D214C /* Drinks.swift in Sources */,
 				BB56DD8B269C8BE600DBF95A /* PersonalViewController.swift in Sources */,
 				BB5C8FA8269CCCB500AE0E34 /* AddItemViewController.swift in Sources */,
 				BBA673E5269D97A20070FE86 /* Contact.swift in Sources */,
