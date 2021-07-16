@@ -25,16 +25,15 @@ class NewTableViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:  .add, target: self , action: #selector(editTapped))
         
         let service = Service(baseUrl: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=rum")
-        service.getAllDrinksList()
         
-        service.completionHandler { [weak self] (drinks, status, message) in
-                    if status {
-                        guard let self = self else {return}
-                        guard let _drinks = drinks as? [CocktailResults] else {return}
-                        self.drinks = _drinks
-                        self.tblMyTable.reloadData()
-                    }
-                }
+        service.getAllDrinksList{ [weak self] (drinks, status, message) in
+            if status {
+                guard let self = self else {return}
+                self.drinks = drinks
+                self.tblMyTable.reloadData()
+            }
+        }
+        
     }
 
     
@@ -71,8 +70,10 @@ extension NewTableViewController:UITableViewDelegate,UITableViewDataSource, NewI
         
         
         cell.tblName.text = drinks[indexPath.row].drinkName
-        cell.tblImage.image = UIImage(named: "image4")
-        cell.tblLastName.text = drinks[indexPath.row].idCoctail
+        cell.tblLastName.text = ""
+        DispatchQueue.main.async {
+            cell.tblImage.image = UIImage(data: try! Data(contentsOf: URL(string: self.drinks[indexPath.row].imageString)!))
+        }
 
         return cell
     }
@@ -80,9 +81,12 @@ extension NewTableViewController:UITableViewDelegate,UITableViewDataSource, NewI
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
                 let detailsVC = PersonalViewController(nibName: "PersonalViewController", bundle: nil)
-        detailsVC.dataFromTableLastName = data[indexPath.row].lastName
-        detailsVC.dataFromTableName = data[indexPath.row].name
-        detailsVC.dataFromTableImageName = data[indexPath.row].imageName
+//        detailsVC.dataFromTableLastName = data[indexPath.row].lastName
+//        detailsVC.dataFromTableName = data[indexPath.row].name
+//        detailsVC.dataFromTableImageName = data[indexPath.row].imageName
+        detailsVC.dataFromTableLastName = ""
+        detailsVC.dataFromTableName = drinks[indexPath.row].drinkName
+        detailsVC.dataFromTableImageName = drinks[indexPath.row].imageString
         
         navigationController?.pushViewController(detailsVC, animated: true)
     }

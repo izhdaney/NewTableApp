@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PexelsViewController" customModule="NewTableApp" customModuleProvider="target">
+            <connections>
+                <outlet property="clMyCollectionView" destination="b4a-k5-4KL" id="lr2-3N-xzo"/>
+                <outlet property="txtSearch" destination="clY-Xe-fJv" id="kVi-Zi-gi6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="b4a-k5-4KL">
+                    <rect key="frame" x="0.0" y="164" width="414" height="548"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="nfP-ZL-IHg">
+                        <size key="itemSize" width="150" height="90"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="clY-Xe-fJv">
+                    <rect key="frame" x="30" y="92" width="244" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mI-8x-eok">
+                    <rect key="frame" x="300" y="94" width="63" height="30"/>
+                    <state key="normal" title="Search"/>
+                    <connections>
+                        <action selector="btnSearchTap:" destination="-1" eventType="touchUpInside" id="tHR-OW-N46"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="clY-Xe-fJv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="3Jj-oh-y2T"/>
+                <constraint firstItem="9mI-8x-eok" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.115942" constant="15" id="875-Zc-xGO"/>
+                <constraint firstItem="9mI-8x-eok" firstAttribute="leading" relation="lessThanOrEqual" secondItem="clY-Xe-fJv" secondAttribute="trailing" constant="26" id="GiC-7J-Gqa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9mI-8x-eok" secondAttribute="trailing" constant="51" id="LQx-0g-AV9"/>
+                <constraint firstItem="b4a-k5-4KL" firstAttribute="top" secondItem="clY-Xe-fJv" secondAttribute="bottom" constant="38" id="NIR-fv-9eO"/>
+                <constraint firstItem="clY-Xe-fJv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="48" id="Wwh-e2-6Ma"/>
+                <constraint firstItem="clY-Xe-fJv" firstAttribute="centerY" secondItem="9mI-8x-eok" secondAttribute="centerY" id="o83-N2-tZI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b4a-k5-4KL" secondAttribute="trailing" id="pDV-cb-uvA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="b4a-k5-4KL" secondAttribute="bottom" constant="150" id="rjx-wC-gWQ"/>
+                <constraint firstItem="b4a-k5-4KL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uke-S4-gtC"/>
+            </constraints>
+            <point key="canvasLocation" x="-23.188405797101453" y="75"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

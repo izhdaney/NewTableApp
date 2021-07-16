@@ -24,6 +24,11 @@
 		BBA673E5269D97A20070FE86 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA673E4269D97A20070FE86 /* Contact.swift */; };
 		BBA673E9269DC8320070FE86 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BBA673E8269DC8320070FE86 /* Podfile */; };
 		BBA673EE269E18FC0070FE86 /* NewItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA673ED269E18FC0070FE86 /* NewItemDelegate.swift */; };
+		BBF8D33926A578CF00749514 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF8D33826A578CF00749514 /* Images.swift */; };
+		BBF8D33C26A578F200749514 /* PexelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF8D33A26A578F200749514 /* PexelsViewController.swift */; };
+		BBF8D33D26A578F200749514 /* PexelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF8D33B26A578F200749514 /* PexelsViewController.xib */; };
+		BBF8D34026A57F6E00749514 /* PexelsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF8D33E26A57F6E00749514 /* PexelsCollectionViewCell.swift */; };
+		BBF8D34126A57F6E00749514 /* PexelsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF8D33F26A57F6E00749514 /* PexelsCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +51,11 @@
 		BBA673E4269D97A20070FE86 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		BBA673E8269DC8320070FE86 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		BBA673ED269E18FC0070FE86 /* NewItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemDelegate.swift; sourceTree = "<group>"; };
+		BBF8D33826A578CF00749514 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		BBF8D33A26A578F200749514 /* PexelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelsViewController.swift; sourceTree = "<group>"; };
+		BBF8D33B26A578F200749514 /* PexelsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PexelsViewController.xib; sourceTree = "<group>"; };
+		BBF8D33E26A57F6E00749514 /* PexelsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelsCollectionViewCell.swift; sourceTree = "<group>"; };
+		BBF8D33F26A57F6E00749514 /* PexelsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PexelsCollectionViewCell.xib; sourceTree = "<group>"; };
 		D41D23759E3D03A2EB72C898 /* Pods-NewTableApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewTableApp.release.xcconfig"; path = "Target Support Files/Pods-NewTableApp/Pods-NewTableApp.release.xcconfig"; sourceTree = "<group>"; };
 		F24529EFD977A4035BA44A90 /* Pods-NewTableApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewTableApp.debug.xcconfig"; path = "Target Support Files/Pods-NewTableApp/Pods-NewTableApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +118,10 @@
 				BB5C8FA6269CCCB500AE0E34 /* AddItemViewController.swift */,
 				BB5C8FA7269CCCB500AE0E34 /* AddItemViewController.xib */,
 				BB465C3C26A186B0005D214C /* Service.swift */,
+				BBF8D33A26A578F200749514 /* PexelsViewController.swift */,
+				BBF8D33B26A578F200749514 /* PexelsViewController.xib */,
+				BBF8D33E26A57F6E00749514 /* PexelsCollectionViewCell.swift */,
+				BBF8D33F26A57F6E00749514 /* PexelsCollectionViewCell.xib */,
 			);
 			path = NewTableApp;
 			sourceTree = "<group>";
@@ -117,6 +131,7 @@
 			children = (
 				BBA673E4269D97A20070FE86 /* Contact.swift */,
 				BB465C3E26A18C99005D214C /* Drinks.swift */,
+				BBF8D33826A578CF00749514 /* Images.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -199,7 +214,9 @@
 				BBA673E9269DC8320070FE86 /* Podfile in Resources */,
 				BB56DD84269C38AB00DBF95A /* NewTableViewController.xib in Resources */,
 				BB56DD88269C460300DBF95A /* MyTableViewCell.xib in Resources */,
+				BBF8D33D26A578F200749514 /* PexelsViewController.xib in Resources */,
 				BB5C8FA9269CCCB500AE0E34 /* AddItemViewController.xib in Resources */,
+				BBF8D34126A57F6E00749514 /* PexelsCollectionViewCell.xib in Resources */,
 				BB56DD8C269C8BE600DBF95A /* PersonalViewController.xib in Resources */,
 				BB56DD6B269B744F00DBF95A /* Assets.xcassets in Resources */,
 			);
@@ -255,9 +272,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB56DD83269C38AB00DBF95A /* NewTableViewController.swift in Sources */,
+				BBF8D33C26A578F200749514 /* PexelsViewController.swift in Sources */,
 				BB56DD62269B744E00DBF95A /* AppDelegate.swift in Sources */,
 				BB56DD64269B744E00DBF95A /* SceneDelegate.swift in Sources */,
+				BBF8D33926A578CF00749514 /* Images.swift in Sources */,
 				BB56DD87269C460300DBF95A /* MyTableViewCell.swift in Sources */,
+				BBF8D34026A57F6E00749514 /* PexelsCollectionViewCell.swift in Sources */,
 				BBA673EE269E18FC0070FE86 /* NewItemDelegate.swift in Sources */,
 				BB465C3D26A186B0005D214C /* Service.swift in Sources */,
 				BB465C3F26A18C99005D214C /* Drinks.swift in Sources */,
