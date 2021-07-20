@@ -13,28 +13,35 @@ class PexelsViewController: UIViewController {
  
     @IBOutlet weak var txtSearch: UITextField!
     
+    @IBAction func txtEditingChanged(_ sender: Any) {
+        searchPicture(searchText: txtSearch.text!)
+    }
+    
     var images = [PhotosResult]()
     let service = Service(baseUrl: "https://api.pexels.com/v1/search")
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.clMyCollectionView.register(UINib(nibName: "PexelsCollectionViewCell" , bundle: nil), forCellWithReuseIdentifier: "PexelsCollectionViewCell")
         self.clMyCollectionView.dataSource = self
         self.clMyCollectionView.delegate = self
+        searchPicture(searchText: "nature")
     }
     
     
-    @IBAction func btnSearchTap(_ sender: Any) {
-        if txtSearch.text != ""{
-            self.service.getSearchImages(searchText: txtSearch.text!){ [weak self] (images, status, message) in
+    func searchPicture(searchText: String){
+
+            self.service.getSearchImages(searchText: searchText){ [weak self] (images, status, message) in
                 if status {
                     guard let self = self else {return}
                     self.images = images
                     self.clMyCollectionView.reloadData()
-                }
             }
         }
     }
+    
+    
     
 }
 
@@ -46,7 +53,9 @@ extension PexelsViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = clMyCollectionView.dequeueReusableCell(withReuseIdentifier: "PexelsCollectionViewCell", for: indexPath) as! PexelsCollectionViewCell
         let image = images[indexPath.row]
-        cell.setupCell(imageResult: image)
+        DispatchQueue.main.async {
+            cell.setupCell(imageResult: image)
+        }
         return cell
     }
 }

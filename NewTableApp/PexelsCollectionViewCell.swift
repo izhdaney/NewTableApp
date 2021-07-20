@@ -13,7 +13,7 @@ class PexelsCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        mainImage.layer.cornerRadius = 20
     }
     
     func setupCell(imageResult: PhotosResult){

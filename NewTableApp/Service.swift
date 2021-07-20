@@ -50,7 +50,8 @@ class Service{
         
         let parameters: Parameters = [
             "query": searchText,
-            "orientation": "landscape"
+            "orientation": "square",
+            "per_page": "80"
             ]
         
         
