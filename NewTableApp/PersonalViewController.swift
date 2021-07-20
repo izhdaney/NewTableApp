@@ -34,7 +34,10 @@ class PersonalViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         lblName.text = dataFromTableName
         lblLastName.text = dataFromTableLastName
-        image.image = UIImage(named: dataFromTableImageName!)
+//        image.image = UIImage(named: dataFromTableImageName!)
+        DispatchQueue.main.async { [self] in
+            image.image = UIImage(data: try! Data(contentsOf: URL(string: self.dataFromTableImageName!)!))
+        }
     }
 
     
